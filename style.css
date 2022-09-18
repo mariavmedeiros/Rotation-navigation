@@ -20,7 +20,9 @@ body {
 .container.show-nav {
   transform: rotate(-20deg);
 }
-
+.container.show-nav .circle {
+  transform: rotate(-70deg);
+}
 .circle-container {
   position: fixed;
   top: -100px;
@@ -36,13 +38,13 @@ body {
 }
 .circle button {
   cursor: pointer;
-  position: relative;
-  top: 20%;
-  left: 20%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
   height: 100px;
   background: transparent;
   border: 0;
-  font-size: 24px;
+  font-size: 22px;
   color: #fff;
 }
 
@@ -58,7 +60,55 @@ body {
   transform: rotate(90deg);
   transform-origin: top left;
 }
+.container.show-nav + nav li {
+  transform: translateX(0);
+  transition-delay: 0.3s;
+}
 
+nav {
+  position: fixed;
+  bottom: 40px;
+  left: 0;
+  z-index: 100;
+}
+nav ul {
+  list-style-type: none;
+  padding-left: 30px;
+}
+nav ul li {
+  text-transform: uppercase;
+  color: white;
+  margin: 40px 0;
+  transform: translateX(-100%);
+  transition: transform0.4s ease-in;
+}
+nav ul li i {
+  font-size: 18px;
+  margin-right: 10px;
+}
+nav ul li + li {
+  margin-left: 15px;
+  transform: translateX(-150%);
+}
+nav ul li + li + li {
+  margin-left: 30px;
+  transform: translateX(-200%);
+}
+.content {
+  max-width: 1000px;
+  margin: 80px auto;
+}
+.content h1 {
+  margin: 20px;
+}
+.content small {
+  color: #555;
+  font-size: italic;
+}
+.content p {
+  color: #333;
+  line-height: 1.5;
+}
 img {
   max-width: 300px;
 }
